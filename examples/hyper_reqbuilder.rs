@@ -1,9 +1,9 @@
 extern crate hyper;
-extern crate multipart;
+extern crate multipart2;
 
 use hyper::Client;
 
-use multipart::client::lazy::Multipart;
+use multipart2::client::lazy::Multipart;
 
 fn main() {
     let mut binary = "Hello world in binary!".as_bytes();
@@ -17,3 +17,4 @@ fn main() {
         .client_request(&Client::new(), "http://localhost:80")
         .expect("Error sending multipart request");
 }
+

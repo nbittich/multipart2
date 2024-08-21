@@ -1,5 +1,5 @@
 [package]
-name = "multipart"
+name = "multipart2"
 
 version = "0.18.0"
 
@@ -25,7 +25,7 @@ mime_guess = "2.0.1"
 rand = "0.8"
 safemem = { version = "0.3", optional = true }
 tempfile = "3"
-clippy = { version = ">=0.0, <0.1", optional = true}
+clippy = { version = ">=0.0, <0.1", optional = true }
 
 #Server Dependencies
 buf_redux = { version = "0.8", optional = true, default-features = false }
@@ -36,7 +36,7 @@ quick-error = { version = "1.2", optional = true }
 # Optional Integrations
 hyper = { version = ">=0.9, <0.11", optional = true, default-features = false }
 iron = { version = ">=0.4,<0.7", optional = true }
-tiny_http = { version = "0.6", optional = true }
+tiny_http = { version = "0.12", optional = true }
 nickel = { version = ">=0.10.1", optional = true }
 
 # Only for Rocket example but dev-dependencies can't be optional
@@ -81,9 +81,6 @@ required-features = ["mock", "nickel", "server"]
 name = "tiny_http"
 required-features = ["mock", "tiny_http", "server"]
 
-[[example]]
-name = "rocket"
-required-features = ["mock", "rocket", "server"]
 
 [[bin]]
 name = "form_test"

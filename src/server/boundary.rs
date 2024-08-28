@@ -301,8 +301,8 @@ mod test {
     use std::io;
     use std::io::prelude::*;
 
-    const BOUNDARY: &'static str = "boundary";
-    const TEST_VAL: &'static str = "--boundary\r\n\
+    const BOUNDARY: &str = "boundary";
+    const TEST_VAL: &str = "--boundary\r\n\
                                     dashed-value-1\r\n\
                                     --boundary\r\n\
                                     dashed-value-2\r\n\
@@ -331,10 +331,7 @@ mod test {
         fn split(data: &'a [u8], at: usize) -> SplitReader<'a> {
             let (left, right) = data.split_at(at);
 
-            SplitReader {
-                left: left,
-                right: right,
-            }
+            SplitReader { left, right }
         }
     }
 

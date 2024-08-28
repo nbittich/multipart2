@@ -35,13 +35,13 @@ pub type LazyIoResult<'a, T> = Result<T, LazyIoError<'a>>;
 
 /// An error for lazily written multipart requests, including the original error as well
 /// as the field which caused the error, if applicable.
+
 pub struct LazyError<'a, E> {
     /// The field that caused the error.
     /// If `None`, there was a problem opening the stream to write or finalizing the stream.
     pub field_name: Option<Cow<'a, str>>,
     /// The inner error.
     pub error: E,
-    /// Private field for back-compat.
     _priv: (),
 }
 
@@ -80,7 +80,7 @@ impl<'a> Into<io::Error> for LazyError<'a, io::Error> {
 
 impl<'a, E: Error> Error for LazyError<'a, E> {
     fn description(&self) -> &str {
-        self.error.description()
+        "description() is deprecated; use Display"
     }
 
     fn cause(&self) -> Option<&dyn Error> {

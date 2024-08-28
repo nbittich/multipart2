@@ -1,13 +1,14 @@
-#[macro_use] extern crate log;
-extern crate multipart;
+#[macro_use]
+extern crate log;
+extern crate multipart2;
 extern crate rand;
 
-use multipart::server::Multipart;
+use multipart2::server::Multipart;
 
-use rand::{Rng, ThreadRng};
+use rand::{rngs::ThreadRng, Rng};
 
-use std::fs::File;
 use std::env;
+use std::fs::File;
 use std::io::{self, Read};
 
 const LOG_LEVEL: log::LevelFilter = log::LevelFilter::Debug;
@@ -16,7 +17,8 @@ struct SimpleLogger;
 
 impl log::Log for SimpleLogger {
     fn enabled(&self, metadata: &log::Metadata) -> bool {
-        LOG_LEVEL.to_level()
+        LOG_LEVEL
+            .to_level()
             .map_or(false, |level| metadata.level() <= level)
     }
 
@@ -25,7 +27,7 @@ impl log::Log for SimpleLogger {
             println!("{} - {}", record.level(), record.args());
         }
     }
-    
+
     fn flush(&self) {}
 }
 
@@ -36,15 +38,19 @@ fn main() {
 
     let mut args = env::args().skip(1);
 
-    let boundary = args.next().expect("Boundary must be provided as the first argument");
+    let boundary = args
+        .next()
+        .expect("Boundary must be provided as the first argument");
 
-    let file = args.next().expect("Filename must be provided as the second argument");
+    let file = args
+        .next()
+        .expect("Filename must be provided as the second argument");
 
     let file = File::open(file).expect("Could not open file");
 
     let reader = RandomReader {
         inner: file,
-        rng: rand::thread_rng()
+        rng: rand::thread_rng(),
     };
 
     let mut multipart = Multipart::with_body(reader, boundary);
@@ -68,7 +74,7 @@ impl<R: Read> Read for RandomReader<R> {
             return Ok(0);
         }
 
-        let len = self.rng.gen_range(1, buf.len() + 1);
+        let len = self.rng.gen_range(1..buf.len() + 1);
 
         self.inner.read(&mut buf[..len])
     }

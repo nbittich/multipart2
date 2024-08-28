@@ -34,7 +34,8 @@
 //! in the code as there are some cases where I'm not sure what the desirable behavior is.
 //!
 //! I have opened an issue as a place to collect responses and discussions for these questions
-//! [on Github](https://github.com/abonander/multipart/issues/96). Please quote the RFC-statement
+//! [on Github](https://github.com/abonander/multipart/issues/96). Please quote the
+//! RFC-statementhyper
 //! (and/or link to its source line) and provide your feedback there.
 #![cfg_attr(feature = "clippy", feature(plugin))]
 #![cfg_attr(feature = "clippy", plugin(clippy))]
@@ -56,12 +57,6 @@ extern crate quick_error;
 
 #[cfg(feature = "server")]
 extern crate safemem;
-
-#[cfg(feature = "hyper")]
-extern crate hyper;
-
-#[cfg(feature = "iron")]
-extern crate iron;
 
 #[cfg(feature = "tiny_http")]
 extern crate tiny_http;

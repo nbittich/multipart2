@@ -27,7 +27,7 @@ macro_rules! invalid_cont_disp {
         return Err(ParseHeaderError::InvalidContDisp(
             $reason,
             $cause.to_string(),
-        ));
+        ))
     };
 }
 

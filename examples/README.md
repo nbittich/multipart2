@@ -1,19 +1,19 @@
-`multipart` Examples
+`multipart2` Examples
 ===========================
 
-These example files show how to use `multipart` with the various crates it integrates with.
+These example files show how to use `multipart2` with the various crates it integrates with.
 
-These files carry the same licenses as [`multipart` itself](https://github.com/abonander/multipart#license), though this may be lightened to a copyright-free license in the near future.
+These files carry the same licenses as [`multipart2` itself](https://github.com/nbittich/multipart2#license), though this may be lightened to a copyright-free license in the near future.
 
 ## Client
 
-Examples for the client-side integrations of `multipart`'s API.
+Examples for the client-side integrations of `multipart2`'s API.
 
 [`hyper_client`](hyper_client.rs)
 ---------------------------------
 Author: [abonander]
 
-This example showcases usage of `multipart` with the `hyper::client::Request` API.
+This example showcases usage of `multipart2` with the `hyper::client::Request` API.
 
 ```
 $ cargo run --example hyper_client
@@ -23,8 +23,8 @@ $ cargo run --example hyper_client
 -----------------------------------------
 Author: [abonander]
 
-This example showcases usage of `multipart` with Hyper's new `Client` API,
-via the lazy-writing capabilities of `multipart::client::lazy`.
+This example showcases usage of `multipart2` with Hyper's new `Client` API,
+via the lazy-writing capabilities of `multipart2::client::lazy`.
 
 ```
 $ cargo run --example hyper_reqbuilder
@@ -36,7 +36,7 @@ $ cargo run --example hyper_reqbuilder
 ---------------------------------
 Author: [Puhrez]
 
-This example shows how to use `multipart` with a [`hyper::Server`] (http://hyper.rs/) to intercept multipart requests.
+This example shows how to use `multipart2` with a [`hyper::Server`] (http://hyper.rs/) to intercept multipart requests.
 
 ```
 $ cargo run --example hyper_server
@@ -46,7 +46,7 @@ $ cargo run --example hyper_server
 -----------------
 Author: [White-Oak]
 
-This example shows how to use `multipart` with the [Iron web application framework](https://github.com/iron/iron), via `multipart`'s support
+This example shows how to use `multipart2` with the [Iron web application framework](https://github.com/iron/iron), via `multipart2`'s support
 for the `iron::Request` type.
 
 To run:
@@ -59,7 +59,7 @@ $ cargo run --features iron --example iron
 -------------------------------------
 Author: [abonander]
 
-This example shows how to use `multipart`'s specialized `Intercept` middleware with Iron, which reads out all fields and
+This example shows how to use `multipart2`'s specialized `Intercept` middleware with Iron, which reads out all fields and
 files to local storage so they can be accessed arbitrarily.
 
 ```
@@ -70,7 +70,7 @@ $ cargo run --features iron --example iron_intercept
 ---------------------------
 Author: [White-Oak]
 
-This example shows how to use `multipart` with the [`tiny_http` crate](https://crates.io/crates/tiny_http), via `multipart`'s support for the `tiny_http::Request` type.
+This example shows how to use `multipart2` with the [`tiny_http` crate](https://crates.io/crates/tiny_http), via `multipart2`'s support for the `tiny_http::Request` type.
 
 ```
 $ cargo run --features tiny_http --example tiny_http
@@ -80,7 +80,7 @@ $ cargo run --features tiny_http --example tiny_http
 ---------------------------------
 Author: [Puhrez]
 
-This example shows how to use `multipart` with a [`hyper::Server`] (http://hyper.rs/) to intercept multipart requests.
+This example shows how to use `multipart2` with a [`hyper::Server`] (http://hyper.rs/) to intercept multipart requests.
 
 ```
 $ cargo run --example hyper_server
@@ -90,7 +90,7 @@ $ cargo run --example hyper_server
 ---------------------
 Author: [iamsebastian]
 
-This example shows how to use `multipart` to handle multipart uploads in [nickel.rs](https://nickel.rs).
+This example shows how to use `multipart2` to handle multipart uploads in [nickel.rs](https://nickel.rs).
 
 ```
 $ cargo run --example nickel --features nickel
@@ -100,9 +100,9 @@ $ cargo run --example nickel --features nickel
 -------------------
 Author: [abonander]
 
-This example shows how `multipart`'s server API can be used with [Rocket](https://rocket.rs) without
+This example shows how `multipart2`'s server API can be used with [Rocket](https://rocket.rs) without
 explicit support (the Rocket folks seem to want to handle `multipart/form-data` behind the scenes
-but haven't gotten around to implementing it yet; this would supercede any integration from `multipart`). 
+but haven't gotten around to implementing it yet; this would supercede any integration from `multipart2`). 
 
 ```
 $ cargo run --example rocket --features "rocket"

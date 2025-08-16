@@ -10,7 +10,7 @@ cargo-fuzz = true
 [dependencies]
 log = "*"
 
-[dependencies.multipart]
+[dependencies.multipart2]
 path = ".."
 default-features = false
 features = ["mock", "client", "server"]

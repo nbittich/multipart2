@@ -530,8 +530,6 @@ impl<M: ReadEntry, Entry> ReadEntryResult<M, Entry> {
     }
 }
 
-const _GENERIC_PARSE_ERR: &str = "an error occurred while parsing field headers";
-
 quick_error! {
     #[derive(Debug)]
     enum ParseHeaderError {
@@ -546,7 +544,7 @@ quick_error! {
         }
         /// The header was found but could not be parsed
         TokenizeError(err: HttparseError) {
-            description(GENERIC_PARSE_ERR)
+            description("an error occurred while parsing field headers")
             display(x) -> ("{}: {}", x.to_string(), err)
             cause(err)
             from()

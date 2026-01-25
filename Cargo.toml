@@ -1,6 +1,7 @@
 [package]
 name = "multipart3"
 version = "0.1.0"
+edition = "2015"
 authors = ["Daniel Gallups <dan@peacher.app>"]
 description = "A fork fork of a backend-agnostic extension for HTTP libraries that provides support for POST multipart/form-data requests on both client and server."
 keywords = ["form-data", "http", "upload"]

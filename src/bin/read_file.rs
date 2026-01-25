@@ -3,7 +3,7 @@ extern crate log;
 extern crate multipart3;
 extern crate rand;
 
-use multipart2::server::Multipart;
+use multipart3::server::Multipart;
 
 use rand::{rngs::ThreadRng, Rng};
 

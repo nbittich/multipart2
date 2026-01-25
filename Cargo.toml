@@ -1,20 +1,12 @@
 [package]
-name = "multipart2"
-
-version = "0.19.1"
-
-authors = ["Austin Bonander <austin.bonander@gmail.com>"]
-
-description = "A backend-agnostic extension for HTTP libraries that provides support for POST multipart/form-data requests on both client and server."
-
+name = "multipart3"
+version = "0.1.0"
+authors = ["Daniel Gallups <dan@peacher.app>"]
+description = "A fork fork of a backend-agnostic extension for HTTP libraries that provides support for POST multipart/form-data requests on both client and server."
 keywords = ["form-data", "http", "upload"]
-
-repository = "http://github.com/abonander/multipart"
-
-documentation = "http://docs.rs/multipart/"
-
+repository = "https://github.com/PeacherApp/multipart3"
+documentation = "http://docs.rs/multipart3/"
 license = "MIT OR Apache-2.0"
-
 readme = "README.md"
 
 [dependencies]
@@ -50,5 +42,3 @@ bench = []
 [[example]]
 name = "tiny_http"
 required-features = ["mock", "tiny_http", "server"]
-
-
